@@ -1,18 +1,18 @@
 {
-  "CONTRACT_ADDRESS": "0xeBc20AA940e498b82Fb4a2eb2D0B34C4Df9d6392",
-  "SCAN_LINK": "https://rinkeby.etherscan.io/address/0xebc20aa940e498b82fb4a2eb2d0b34c4df9d6392",
+  "CONTRACT_ADDRESS": "0x8AbB6CF3Ef9F5f2376405AAdDaF7c99D277A023A",
+  "SCAN_LINK": "https://rinkeby.etherscan.io/address/0x8AbB6CF3Ef9F5f2376405AAdDaF7c99D277A023A",
   "NETWORK": {
     "NAME": "rinkeby",
     "SYMBOL": "ETH",
     "ID": 4
   },
-  "NFT_NAME": "NFT Test 8",
-  "SYMBOL": "NFTT8",
+  "NFT_NAME": "NFT Test 9",
+  "SYMBOL": "NFTT9",
   "MAX_SUPPLY": 10000,
   "WEI_COST": 50000000000000000,
   "DISPLAY_COST": 0.05,
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/nft-test-8-1",
+  "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/nft-test-9",
   "SHOW_BACKGROUND": true
 }
