@@ -112,16 +112,16 @@ function App() {
     NFT_NAME: "",
     SYMBOL: "",
     MAX_SUPPLY: 1,
-    WEI_COST: 0,
-    DISPLAY_COST: 0,
+    //WEI_COST: 0,
+    //DISPLAY_COST: 0,
     GAS_LIMIT: 0,
     MARKETPLACE: "",
     MARKETPLACE_LINK: "",
     SHOW_BACKGROUND: false,
   });
 
-  const claimNFTs = () => {
-    let cost = CONFIG.WEI_COST;
+  const claimNFTs = (cost) => {
+//    let cost = CONFIG.WEI_COST;
     let gasLimit = CONFIG.GAS_LIMIT;
     let totalCostWei = String(cost * mintAmount);
     let totalGasLimit = String(gasLimit * mintAmount);
@@ -173,6 +173,10 @@ function App() {
       dispatch(fetchData(blockchain.account));
     }
   };
+
+  const getDisplayCost = (cost) => {
+    return web3.utils.fromWei(cost, 'ether');
+  }
 
   const getConfig = async () => {
     const configResponse = await fetch("/config/config.json", {
@@ -303,7 +307,7 @@ function App() {
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
+                  1 {CONFIG.SYMBOL} costs {getDisplayCost(data.cost)}{" "}
                   {CONFIG.NETWORK.SYMBOL}.
                 </s.TextTitle>
                 <s.SpacerXSmall />
@@ -396,7 +400,7 @@ function App() {
                         disabled={claimingNft ? 1 : 0}
                         onClick={(e) => {
                           e.preventDefault();
-                          claimNFTs();
+                          claimNFTs(data.cost);
                           getData();
                         }}
                       >
