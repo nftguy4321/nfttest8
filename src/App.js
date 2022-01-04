@@ -113,12 +113,14 @@ function App() {
     NFT_NAME: "",
     SYMBOL: "",
     MAX_SUPPLY: 1,
-    //WEI_COST: 0,
-    //DISPLAY_COST: 0,
     GAS_LIMIT: 0,
     MARKETPLACE: "",
     MARKETPLACE_LINK: "",
     SHOW_BACKGROUND: false,
+    TWITTER_LINK: "",
+    TWITTER_LABEL: "",
+    DISCORD_LINK: "",
+    DISCORD_LABEL: ""
   });
 
   const claimNFTs = (cost) => {
@@ -161,11 +163,11 @@ function App() {
     setMintAmount(newMintAmount);
   };
 
-  const incrementMintAmount = () => {
+  const incrementMintAmount = (maxMint = 50) => {
     let newMintAmount = mintAmount + 1;
-    if (newMintAmount > 50) {
-      newMintAmount = 50;
-    }
+    if (newMintAmount > maxMint)
+      newMintAmount = maxMint;
+
     setMintAmount(newMintAmount);
   };
 
@@ -279,6 +281,26 @@ function App() {
               >
                 {CONFIG.MARKETPLACE}
               </StyledButton>
+              <StyledButton
+                style={{
+                  margin: "5px",
+                }}
+                onClick={(e) => {
+                  window.open(CONFIG.TWITTER_LINK, "_blank");
+                }}
+              >
+                {CONFIG.TWITTER_LABEL}
+              </StyledButton>
+                            <StyledButton
+                              style={{
+                                margin: "5px",
+                              }}
+                              onClick={(e) => {
+                                window.open(CONFIG.DISCORD_LINK, "_blank");
+                              }}
+                            >
+                {CONFIG.DISCORD_LABEL}
+              </StyledButton>
             </span>
             <s.SpacerSmall />
             {(Number(data.totalSupply) >= CONFIG.MAX_SUPPLY || Number(data.totalSupply) >= Number(data.saleLimit)) ? (
@@ -389,7 +411,7 @@ function App() {
                         disabled={claimingNft ? 1 : 0}
                         onClick={(e) => {
                           e.preventDefault();
-                          incrementMintAmount();
+                          incrementMintAmount(data.maxMint);
                         }}
                       >
                         +

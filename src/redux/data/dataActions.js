@@ -37,12 +37,16 @@ export const fetchData = () => {
         .getState()
         .blockchain.smartContract.methods.saleLimit()
         .call();
-
+      let maxMint = await store
+        .getState()
+        .blockchain.smartContract.methods.maxMintAmount()
+        .call();
       dispatch(
         fetchDataSuccess({
           totalSupply,
           cost,
-          saleLimit
+          saleLimit,
+          maxMint
         })
       );
     } catch (err) {

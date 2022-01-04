@@ -12,5 +12,9 @@
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
   "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/nft-test-9-3",
-  "SHOW_BACKGROUND": true
+  "SHOW_BACKGROUND": true,
+  "TWITTER_LINK": "https://twitter.com/WTPhunks/",
+  "TWITTER_LABEL": "@WTPhunks",
+  "DISCORD_LINK": "https://discord.com",
+  "DISCORD_LABEL": "WTPhunks Discord"
 }
