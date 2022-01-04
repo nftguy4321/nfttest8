@@ -235,7 +235,7 @@ function App() {
                 color: "var(--accent-text)",
               }}
             >
-                {data.totalSupply} / {CONFIG.MAX_SUPPLY}
+                { data.cost !== null ? data.totalSupply : '???'} / {CONFIG.MAX_SUPPLY}
             </s.TextTitle>
             <s.TextTitle
               style={{
@@ -308,7 +308,7 @@ function App() {
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  1 {CONFIG.SYMBOL} costs {getDisplayCost(data.cost)}{" "}
+                  1 {CONFIG.SYMBOL} costs { data.cost !== null ? getDisplayCost(data.cost) : '...'}{" "}
                   {CONFIG.NETWORK.SYMBOL}.
                 </s.TextTitle>
                 <s.SpacerXSmall />

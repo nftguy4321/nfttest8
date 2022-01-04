@@ -2,7 +2,7 @@ const initialState = {
   loading: false,
   totalSupply: 0,
   saleLimit: 1,
-  cost: 0,
+  cost: null,
   error: false,
   errorMsg: "",
 };
