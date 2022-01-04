@@ -4,6 +4,7 @@ import { connect } from "./redux/blockchain/blockchainActions";
 import { fetchData } from "./redux/data/dataActions";
 import * as s from "./styles/globalStyles";
 import styled from "styled-components";
+import Web3 from "web3";
 
 const truncate = (input, len) =>
   input.length > len ? `${input.substring(0, len)}...` : input;
@@ -175,7 +176,7 @@ function App() {
   };
 
   const getDisplayCost = (cost) => {
-    return web3.utils.fromWei(cost, 'ether');
+    return Web3.utils.fromWei(cost, 'ether');
   }
 
   const getConfig = async () => {
