@@ -230,17 +230,7 @@ function App() {
                 color: "var(--accent-text)",
               }}
             >
-              { Number(data.saleLimit) > 1 ? (
-                  <>
                 {data.totalSupply} / {CONFIG.MAX_SUPPLY}
-                  </>
-                )
-                :
-                (
-                  <>
-                  </>
-                )
-              }
             </s.TextTitle>
             <s.TextTitle
               style={{
