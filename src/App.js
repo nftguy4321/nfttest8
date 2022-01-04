@@ -176,7 +176,7 @@ function App() {
   };
 
   const getDisplayCost = (cost) => {
-    return Web3.utils.fromWei(cost, 'ether');
+    return Web3.utils.fromWei(cost.toString(), 'ether');
   }
 
   const getConfig = async () => {
