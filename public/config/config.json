@@ -1,17 +1,17 @@
 {
-  "CONTRACT_ADDRESS": "0xEfff5F40E9654c970c28984B194fcF75Dca75467",
-  "SCAN_LINK": "https://rinkeby.etherscan.io/address/0xEfff5F40E9654c970c28984B194fcF75Dca75467",
+  "CONTRACT_ADDRESS": "0x3C322336305ad6f23c682E16A88F31Fa360e0BCc",
+  "SCAN_LINK": "https://rinkeby.etherscan.io/address/0x3C322336305ad6f23c682E16A88F31Fa360e0BCc",
   "NETWORK": {
-    "NAME": "ropsten",
+    "NAME": "rinkeby",
     "SYMBOL": "ETH",
-    "ID": 3
+    "ID": 4
   },
-  "NFT_NAME": "NFT Test9R-1",
-  "SYMBOL": "NFTT9R1",
+  "NFT_NAME": "NFT Test 10",
+  "SYMBOL": "NFTT10",
   "MAX_SUPPLY": 10000,
   "GAS_LIMIT": 285000,
   "MARKETPLACE": "Opeansea",
-  "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/nft-test-9-3",
+  "MARKETPLACE_LINK": "https://testnets.opensea.io/collection/nft-test-10",
   "SHOW_BACKGROUND": true,
   "TWITTER_LINK": "https://twitter.com/WTPhunks/",
   "TWITTER_LABEL": "@WTPhunks",
