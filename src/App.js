@@ -112,7 +112,6 @@ function App() {
     NFT_NAME: "",
     SYMBOL: "",
     MAX_SUPPLY: 1,
-    SALE_LIMIT: 1,
     WEI_COST: 0,
     DISPLAY_COST: 0,
     GAS_LIMIT: 0,
@@ -241,7 +240,7 @@ function App() {
                 color: "var(--accent-text)",
               }}
             >
-              Sale Limit: {CONFIG.SALE_LIMIT}
+              Sale Limit: {data.saleLimit}
             </s.TextTitle>
             <s.TextDescription
               style={{
@@ -270,11 +269,11 @@ function App() {
               </StyledButton>
             </span>
             <s.SpacerSmall />
-            {(Number(data.totalSupply) >= CONFIG.MAX_SUPPLY || Number(data.totalSupply) >= CONFIG.SALE_LIMIT) ? (
+            {(Number(data.totalSupply) >= CONFIG.MAX_SUPPLY || Number(data.totalSupply) >= Number(data.saleLimit)) ? (
               <>
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
-                > {CONFIG.MAX_SUPPLY == CONFIG.SALE_LIMIT ? (<>
+                > {CONFIG.MAX_SUPPLY == Number(data.saleLimit) ? (<>
                   The sale has ended. </>) : (
                     <>
                      The current sale phase has ended.  Stay tuned for the next wave.
