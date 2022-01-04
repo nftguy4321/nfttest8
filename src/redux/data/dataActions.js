@@ -41,12 +41,25 @@ export const fetchData = () => {
         .getState()
         .blockchain.smartContract.methods.maxMintAmount()
         .call();
+      let account = store.getState().blockchain.account;
+      let isPresale = await store
+        .getState()
+        .blockchain.smartContract.methods.presaleWallets(account)
+        .call();
+      let presaleCost = await store
+        .getState()
+        .blockchain.smartContract.methods.presaleCost()
+        .call();
+      let userCost = (isPresale ? presaleCost : cost);
       dispatch(
         fetchDataSuccess({
           totalSupply,
           cost,
+          presaleCost,
           saleLimit,
-          maxMint
+          maxMint,
+          isPresale,
+          userCost
         })
       );
     } catch (err) {

@@ -237,7 +237,7 @@ function App() {
                 color: "var(--accent-text)",
               }}
             >
-                { data.cost !== null ? data.totalSupply : '???'} / {CONFIG.MAX_SUPPLY}
+                { data.userCost !== null ? data.totalSupply : '???'} / {CONFIG.MAX_SUPPLY}
             </s.TextTitle>
             <s.TextTitle
               style={{
@@ -330,7 +330,7 @@ function App() {
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
                 >
-                  1 {CONFIG.SYMBOL} costs { data.cost !== null ? getDisplayCost(data.cost) : '...'}{" "}
+                  1 {CONFIG.SYMBOL} costs { data.userCost !== null ? getDisplayCost(data.userCost) + ( data.isPresale ? '*' : '') : '...'}{" "}
                   {CONFIG.NETWORK.SYMBOL}.
                 </s.TextTitle>
                 <s.SpacerXSmall />
@@ -339,6 +339,14 @@ function App() {
                 >
                   Excluding gas fees.
                 </s.TextDescription>
+                { data.isPresale ? (
+                  <s.TextDescription
+                    style={{ textAlign: "center", color: "var(--accent-text)" }}
+                  >
+                    * Presale pricing active!
+                  </s.TextDescription>
+                ) : (<></>)
+                }
                 <s.SpacerSmall />
                 {blockchain.account === "" ||
                 blockchain.smartContract === null ? (
@@ -423,7 +431,7 @@ function App() {
                         disabled={claimingNft ? 1 : 0}
                         onClick={(e) => {
                           e.preventDefault();
-                          claimNFTs(data.cost);
+                          claimNFTs(data.userCost);
                           getData();
                         }}
                       >
