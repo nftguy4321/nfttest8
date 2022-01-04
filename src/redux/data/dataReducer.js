@@ -23,7 +23,7 @@ const dataReducer = (state = initialState, action) => {
         loading: false,
         totalSupply: action.payload.totalSupply,
         saleLimit: action.payload.saleLimit,
-        // cost: action.payload.cost,
+        cost: action.payload.cost,
         error: false,
         errorMsg: "",
       };
