@@ -1,14 +1,15 @@
 {
-  "CONTRACT_ADDRESS": "0xd47a41A83f055A3c7F11aEcEd297052839f704E5",
-  "SCAN_LINK": "https://rinkeby.etherscan.io/address/0xd47a41A83f055A3c7F11aEcEd297052839f704E5",
+  "CONTRACT_ADDRESS": "0xEfff5F40E9654c970c28984B194fcF75Dca75467",
+  "SCAN_LINK": "https://rinkeby.etherscan.io/address/0xEfff5F40E9654c970c28984B194fcF75Dca75467",
   "NETWORK": {
-    "NAME": "rinkeby",
+    "NAME": "ropsten",
     "SYMBOL": "ETH",
-    "ID": 4
+    "ID": 3
   },
-  "NFT_NAME": "NFT Test 9-3",
-  "SYMBOL": "NFTT93",
+  "NFT_NAME": "NFT Test9R-1",
+  "SYMBOL": "NFTT9R1",
   "MAX_SUPPLY": 10000,
+  "SALE_LIMIT": 1000,
   "WEI_COST": 0,
   "DISPLAY_COST": 0.00,
   "GAS_LIMIT": 285000,
