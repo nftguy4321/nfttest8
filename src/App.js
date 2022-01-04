@@ -230,7 +230,7 @@ function App() {
                 color: "var(--accent-text)",
               }}
             >
-              { Number(data.saleLimit) > 0 ? (
+              { Number(data.saleLimit) > 1 ? (
                   <>
                 {data.totalSupply} / {CONFIG.MAX_SUPPLY}
                   </>
@@ -250,7 +250,7 @@ function App() {
                 color: "var(--accent-text)",
               }}
             >
-              {Number(data.saleLimit) > 0 && Number(data.saleLimit < CONFIG.MAX_SUPPLY) ? (
+              {Number(data.saleLimit) > 1 && Number(data.saleLimit < CONFIG.MAX_SUPPLY) ? (
                 <>
                   Sale Limit: {data.saleLimit}
                 </>
