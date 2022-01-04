@@ -230,7 +230,17 @@ function App() {
                 color: "var(--accent-text)",
               }}
             >
-              {data.totalSupply} / {CONFIG.MAX_SUPPLY}
+              { Number(data.saleLimit) > 0 ? (
+                  <>
+                {data.totalSupply} / {CONFIG.MAX_SUPPLY}
+                  </>
+                )
+                :
+                (
+                  <>
+                  </>
+                )
+              }
             </s.TextTitle>
             <s.TextTitle
               style={{
@@ -240,7 +250,14 @@ function App() {
                 color: "var(--accent-text)",
               }}
             >
-              Sale Limit: {data.saleLimit}
+              {Number(data.saleLimit) > 0 && Number(data.saleLimit < CONFIG.MAX_SUPPLY) ? (
+                <>
+                  Sale Limit: {data.saleLimit}
+                </>
+                ) : (
+                  <>
+                  </>
+              )}
             </s.TextTitle>
             <s.TextDescription
               style={{
