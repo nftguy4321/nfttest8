@@ -240,7 +240,7 @@ function App() {
                 color: "var(--accent-text)",
               }}
             >
-              {Number(data.saleLimit) > 1 && Number(data.saleLimit < CONFIG.MAX_SUPPLY) ? (
+              {Number(data.saleLimit) > 1 && Number(data.saleLimit) < CONFIG.MAX_SUPPLY ? (
                 <>
                   Sale Limit: {data.saleLimit}
                 </>
@@ -283,7 +283,7 @@ function App() {
                 > {CONFIG.MAX_SUPPLY == Number(data.saleLimit) ? (<>
                   The sale has ended. </>) : (
                     <>
-                     The current sale phase has ended.  Stay tuned for the next wave.
+                     The current sale phase has ended.  Stay tuned for the next wave!
                     </>
                 )
                 }
