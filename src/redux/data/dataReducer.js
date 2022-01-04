@@ -17,6 +17,7 @@ const dataReducer = (state = initialState, action) => {
         errorMsg: "",
       };
     case "CHECK_DATA_SUCCESS":
+      console.log(action.payload);
       return {
         ...state,
         loading: false,
