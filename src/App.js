@@ -270,12 +270,17 @@ function App() {
               </StyledButton>
             </span>
             <s.SpacerSmall />
-            {Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
+            {(Number(data.totalSupply) >= CONFIG.MAX_SUPPLY || Number(data.totalSupply) >= CONFIG.SALE_LIMIT) ? (
               <>
                 <s.TextTitle
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
-                >
-                  The sale has ended.
+                > {CONFIG.MAX_SUPPLY == CONFIG.SALE_LIMIT ? (<>
+                  The sale has ended. </>) : (
+                    <>
+                     The current sale phase has ended.  Stay tuned for the next wave.
+                    </>
+                )
+                }
                 </s.TextTitle>
                 <s.TextDescription
                   style={{ textAlign: "center", color: "var(--accent-text)" }}
